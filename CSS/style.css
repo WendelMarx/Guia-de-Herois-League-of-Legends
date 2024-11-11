@@ -1,0 +1,80 @@
+:root {
+    --color--background: #0D0D0D;
+    --color--lightGray: #f2f2f2;
+    --color--cyan: #00ffff;
+    --track-opacity: 0.5;
+}
+
+h1,
+h2,
+h3,
+p {
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+body {
+    background-color: var(--color--background);
+
+}
+.menu{
+    height: 15vh;
+    background-color: #111;
+    border-bottom: 0.1rem solid #f2f2f230 ;
+}
+main {
+    display: flex;
+    margin: auto;
+}
+
+section {
+    padding: 5vw;
+    flex: 1;
+}
+
+.filterMenu{
+    width: 20vw;
+    border-style: solid;
+    background-color: #111;
+}
+
+/* Configurando menu de filtros*/
+
+.filterMenu {
+    padding: 10rem 0 0 5rem;
+}
+
+#Camada_2 {
+    height: 1rem;
+}
+aside p {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #00ffff;
+}
+
+.filterOrder,
+.filterExhibit,
+.filterFunction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+#function,
+#exhibit,
+#order{
+    width: 15rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    background-position: right 1rem center;
+    border-radius: 0.25rem;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    color: rgb(66, 70, 77);
+}

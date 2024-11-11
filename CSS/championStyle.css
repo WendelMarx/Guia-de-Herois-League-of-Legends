@@ -1,0 +1,133 @@
+.firstTitle {
+    color: var(--color--lightGray);
+}
+
+.secondTitle {
+    color: var(--color--cyan);
+}
+
+.champions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+    padding-top: 2rem;
+}
+
+@media (max-width: 1250px) {
+    .champions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 992px) {
+    .champions {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+.champion {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    box-shadow: var(--color--background);
+    width: 10rem;
+    height: 20rem;
+}
+
+.descriptionChampion {
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    width: 8rem;
+}
+
+.imgChampionOne {
+    border-width: 1px;
+    border-color: var(--color--cyan);
+    border-style: solid;
+    border-radius: 1rem;
+    height: 318px;
+}
+
+.nameChampion {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color--lightGray);
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--color--cyan);
+}
+
+.function {
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
+
+    color: var(--color--lightGray);
+}
+
+.lore {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.loreTitle {
+    color: var(--color--cyan);
+    font-weight: 700;
+
+}
+
+.loreDescription {
+    letter-spacing: 0.09rem;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--color--lightGray);
+    max-height: 7.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    line-height: 0.96rem;
+    scrollbar-width: thin;
+    scrollbar-color: #00ffff rgba(242, 242, 242, 0.1);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    
+
+}
+
+::-webkit-scrollbar-thumb {
+    background:#00ffff;
+    border-radius: 10px;
+    
+}
+
+.speels {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.imgSpeelPassive {
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 0.3rem;
+    width: calc(100px / 2);
+    flex-direction: column;
+}
+
+.spellKeys {
+    width: 100%;
+
+}
+
+.imgSpeel {
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 0.3rem;
+    width: calc(97px / 4);
+    object-fit: contain;
+}
