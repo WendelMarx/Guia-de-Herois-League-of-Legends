@@ -32,10 +32,10 @@
             </div>
             <div class="filterExhibit">
                 <p>Exibir:</p>
-                <select name="exhibit" id="exhibit">
-                    <option value="20">20 por página</option>
-                    <option value="30">30 por página</option>
-                    <option value="40">40 por página</option>
+                <select name="exhibit" id="exhibit" onchange="updatePageValue()">
+                    <option value="30" selected>30 por página</option>
+                    <option value="45">45 por página</option>
+                    <option value="60">60 por página</option>
                 </select>
             </div>
             <div class="filterFunction">
@@ -52,8 +52,8 @@
         </aside>
         <section id="championsSection">
             <h1><span class="firstTitle">ESCOLHA O SEU </span><span class="secondTitle">CAMPEÃO</span></h1>
-            <ol class="champions">
-                <li class="champion">
+            <ol id="champions" class="champions">
+              <!--  <li class="champion">
                     <a href="#"> <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
                             alt="Imagem do campeão Aatrox" class="imgChampionOne"></a>
                     <div class="descriptionChampion">
@@ -73,7 +73,7 @@
                         </aside>
 
                         <div class="speels">
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
+                            <img src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/passive/Aatrox_Passive.png"
                                 alt="Habilidade da tecla passiva." class="imgSpeelPassive">
                             <aside class="spellKeys"><img
                                     src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
@@ -86,112 +86,14 @@
                                     class="imgSpeel"></aside>
                         </div>
                     </div>
-                </li>
-                <li class="champion">
-                    <a href="#"> <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
-                            alt="Imagem do campeão Aatrox" class="imgChampionOne"></a>
-                    <div class="descriptionChampion">
-                        <p class="subtitle">A Espada Darkin</p>
-                        <h2 class="nameChampion">Aatrox</h2>
-                        <p class="function">Função: Lutador</p>
-                        <aside class="lore">
-                            <h3 class="loreTitle">História</h3>
-                            <p class="loreDescription">Antes defensores honrados de Shurima contra o temido Vazio,
-                                Aatrox e seus irmãos acabaram se tornando uma ameaça ainda maior para Runeterra, e a
-                                única coisa capaz de derrotá-los foi um tipo de feitiçaria mortal e traiçoeira. Mas após
-                                séculos de encarceramento, Aatrox foi o primeiro a encontrar a liberdade novamente, e
-                                ele saiu corrompendo e transformando quem fosse tolo o suficiente de tentar tocar na
-                                arma mágica que continha sua essência. Agora, com um corpo roubado, ele vaga por
-                                Runeterra transfigurado, em uma versão bizarra da sua forma anterior, buscando uma
-                                vingança apocalíptica.</p>
-                        </aside>
-
-                        <div class="speels">
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
-                                alt="Habilidade da tecla passiva." class="imgSpeelPassive">
-                            <aside class="spellKeys"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
-                                    alt="Habilidade da tecla 'Q'." class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxW.png" alt=""
-                                    class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxE.png" alt=""
-                                    class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxR.png" alt=""
-                                    class="imgSpeel"></aside>
-                        </div>
-                    </div>
-                </li>  <li class="champion">
-                    <a href="#"> <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
-                            alt="Imagem do campeão Aatrox" class="imgChampionOne"></a>
-                    <div class="descriptionChampion">
-                        <p class="subtitle">A Espada Darkin</p>
-                        <h2 class="nameChampion">Aatrox</h2>
-                        <p class="function">Função: Lutador</p>
-                        <aside class="lore">
-                            <h3 class="loreTitle">História</h3>
-                            <p class="loreDescription">Antes defensores honrados de Shurima contra o temido Vazio,
-                                Aatrox e seus irmãos acabaram se tornando uma ameaça ainda maior para Runeterra, e a
-                                única coisa capaz de derrotá-los foi um tipo de feitiçaria mortal e traiçoeira. Mas após
-                                séculos de encarceramento, Aatrox foi o primeiro a encontrar a liberdade novamente, e
-                                ele saiu corrompendo e transformando quem fosse tolo o suficiente de tentar tocar na
-                                arma mágica que continha sua essência. Agora, com um corpo roubado, ele vaga por
-                                Runeterra transfigurado, em uma versão bizarra da sua forma anterior, buscando uma
-                                vingança apocalíptica.</p>
-                        </aside>
-
-                        <div class="speels">
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
-                                alt="Habilidade da tecla passiva." class="imgSpeelPassive">
-                            <aside class="spellKeys"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
-                                    alt="Habilidade da tecla 'Q'." class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxW.png" alt=""
-                                    class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxE.png" alt=""
-                                    class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxR.png" alt=""
-                                    class="imgSpeel"></aside>
-                        </div>
-                    </div>
-                </li>  <li class="champion">
-                    <a href="#"> <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg"
-                            alt="Imagem do campeão Aatrox" class="imgChampionOne"></a>
-                    <div class="descriptionChampion">
-                        <p class="subtitle">A Espada Darkin</p>
-                        <h2 class="nameChampion">Aatrox</h2>
-                        <p class="function">Função: Lutador</p>
-                        <aside class="lore">
-                            <h3 class="loreTitle">História</h3>
-                            <p class="loreDescription">Antes defensores honrados de Shurima contra o temido Vazio,
-                                Aatrox e seus irmãos acabaram se tornando uma ameaça ainda maior para Runeterra, e a
-                                única coisa capaz de derrotá-los foi um tipo de feitiçaria mortal e traiçoeira. Mas após
-                                séculos de encarceramento, Aatrox foi o primeiro a encontrar a liberdade novamente, e
-                                ele saiu corrompendo e transformando quem fosse tolo o suficiente de tentar tocar na
-                                arma mágica que continha sua essência. Agora, com um corpo roubado, ele vaga por
-                                Runeterra transfigurado, em uma versão bizarra da sua forma anterior, buscando uma
-                                vingança apocalíptica.</p>
-                        </aside>
-
-                        <div class="speels">
-                            <img src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
-                                alt="Habilidade da tecla passiva." class="imgSpeelPassive">
-                            <aside class="spellKeys"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxQ.png"
-                                    alt="Habilidade da tecla 'Q'." class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxW.png" alt=""
-                                    class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxE.png" alt=""
-                                    class="imgSpeel"><img
-                                    src="https://ddragon.leagueoflegends.com/cdn/14.22.1/img/spell/AatroxR.png" alt=""
-                                    class="imgSpeel"></aside>
-                        </div>
-                    </div>
-                </li>
+                </li> -->
             </ol>
         </section>
 
     </main>
+    <script src="./JavaScript/leagueOfLegendsApi.js"></script>
     <script src="./JavaScript/main.js"></script>
+    
 </body>
 
 </html>
