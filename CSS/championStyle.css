@@ -1,133 +1,159 @@
-.firstTitle {
-    color: var(--color--lightGray);
-}
 
-.secondTitle {
-    color: var(--color--cyan);
-}
-
-.champions {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 4rem;
-    padding-top: 2rem;
-}
-
-@media (max-width: 1250px) {
-    .champions {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (max-width: 992px) {
-    .champions {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-}
+/* 🎴 Card */
 .champion {
-    border-radius: 1rem;
+
+    background: var(--color-dark-card);
+    border-radius: 14px;
+    overflow: hidden;
+    color: var(--color-light);
     display: flex;
-    flex-direction: row;
-    box-shadow: var(--color--background);
-    width: 10rem;
-    height: 20rem;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: slideUp 0.6s ease forwards;
 }
 
-.descriptionChampion {
-    padding: 0.5rem 0rem 0.5rem 1rem;
-    width: 8rem;
+/* Glow nas bordas */
+.champion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--color-cyan), var(--color-gold), var(--color-red), var(--color-cyan));
+    background-size: 400% 400%;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: borderGlow 6s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.imgChampionOne {
+.champion:hover::before {
+    opacity: 1;
+}
+
+.champion:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* 🖼 Imagem */
+.champion img.imgChampionOne {
+    position: relative;
+    display: inline-block;
     border-width: 1px;
     border-color: var(--color--cyan);
     border-style: solid;
-    border-radius: 1rem;
-    height: 318px;
-}
-
-.nameChampion {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color--lightGray);
-}
-
-.subtitle {
-    font-size: 0.7rem;
-    color: var(--color--cyan);
-}
-
-.function {
-    margin-bottom: 0.2rem;
-    font-size: 0.7rem;
-
-    color: var(--color--lightGray);
-}
-
-.lore {
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: none;
     width: 100%;
-    margin: 1rem 0;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.loreTitle {
-    color: var(--color--cyan);
-    font-weight: 700;
-
+.champion:hover img.imgChampionOne {
+    transform: scale(1.08);
+    filter: brightness(1.2) contrast(1.1);
 }
 
-.loreDescription {
-    letter-spacing: 0.09rem;
-    font-size: 0.6rem;
-    font-weight: 500;
-    color: var(--color--lightGray);
-    max-height: 7.5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    text-overflow: ellipsis;
-    line-height: 0.96rem;
-    scrollbar-width: thin;
-    scrollbar-color: #00ffff rgba(242, 242, 242, 0.1);
+/* 📝 Descrição */
+.imgChampionDescription {
+
+    position: absolute;
+    top: 30%;
+    left: 5%;
 }
 
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    
-
-}
-
-::-webkit-scrollbar-thumb {
-    background:#00ffff;
-    border-radius: 10px;
-    
-}
-
-.speels {
-    width: 120px;
+.descriptionChampion {
+    padding: 15px;
+    background: var(--color-overlay);
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
-.imgSpeelPassive {
-    border-width: 1px;
-    border-color: transparent;
-    border-style: solid;
-    border-radius: 0.3rem;
-    width: calc(100px / 2);
-    flex-direction: column;
+/* Nome */
+.nameChampion {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
 }
 
-.spellKeys {
-    width: 100%;
-
+/* Função */
+.function {
+    font-size: 14px;
+    color: var(--color-cyan);
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.imgSpeel {
-    border-width: 1px;
-    border-color: transparent;
-    border-style: solid;
-    border-radius: 0.3rem;
-    width: calc(97px / 4);
-    object-fit: contain;
+/* 📖 Lore */
+.lore {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: auto;
+    max-height: 120px;
+    overflow-y: auto;
+    transition: max-height 0.4s ease;
+}
+
+.champion:hover .lore {
+    max-height: 180px;
+}
+
+/* Scroll */
+.lore::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lore::-webkit-scrollbar-thumb {
+    background: var(--color-cyan);
+    border-radius: 10px;
+}
+
+.lore::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ✨ Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
