@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
 :root {
     --color--background: #0D0D0D;
     --color--lightGray: #f2f2f2;
     --color--cyan: #00ffff;
     --track-opacity: 0.5;
+    --color-gold: #f4c542;
+    --color-red: #ff4c4c;
+    --color-dark-card: #111;
+    --color-overlay: rgba(15, 15, 15, 0.95);
+}
+
+/* === Tipografia === */
+body {
+    background: radial-gradient(circle at top, #0f2027, #0d0d0d);
+    font-family: "Lato", sans-serif;
+    color: var(--color--lightGray);
+    line-height: 1.5;
 }
 
 h1,
@@ -14,67 +28,210 @@ p {
 
 h1 {
     font-weight: 900;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-weight: 900;
     font-size: 3rem;
 }
 
-body {
-    background-color: var(--color--background);
+/* === Navbar === */
+#nav-bar {
+    background: var(--color--background);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    position: relative;
+}
 
+#nav-bar h1,
+#nav-bar span {
+    color: var(--color--cyan);
+    font-weight: bold;
+    text-shadow: 0 0 4px var(--color--cyan);
 }
-.menu{
-    height: 15vh;
-    background-color: #111;
-    border-bottom: 0.1rem solid #f2f2f230 ;
+
+#nav-bar a {
+    color: var(--color--cyan);
+    text-decoration: none;
+    margin: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
 }
+
+#nav-bar a::after,
+#nav-bar h1::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--color--cyan);
+    transition: width 0.3s ease-in-out;
+}
+
+#nav-bar a:hover::after,
+#nav-bar h1:hover::after {
+    width: 100%;
+}
+
+#nav-bar h1:hover {
+    color: #fff;
+}
+
+/* === Layout Principal === */
 main {
     display: flex;
-    margin: auto;
+    gap: 40px;
+    margin: 20px auto;
+    max-width: 1400px;
+    flex-wrap: wrap;
 }
 
-section {
-    padding: 5vw;
-    flex: 1;
-}
-
-.filterMenu{
-    width: 20vw;
-    border-style: solid;
-    background-color: #111;
-}
-
-/* Configurando menu de filtros*/
-
+/* === Menu Lateral (Filtros) === */
 .filterMenu {
-    padding: 10rem 0 0 5rem;
+    flex: 0 0 220px;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    height: fit-content;
+    position: sticky;
+    top: 80px;
 }
 
-#Camada_2 {
-    height: 1rem;
-}
-aside p {
-    font-weight: 600;
-    font-size: 1rem;
-    color: #00ffff;
+.filterMenu p {
+    font-weight: bold;
+    color: var(--color--cyan);
+    margin-bottom: 10px;
 }
 
-.filterOrder,
-.filterExhibit,
-.filterFunction {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-#function,
-#exhibit,
-#order{
-    width: 15rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    background-color: rgb(255, 255, 255);
+/* Selects */
+select {
+    appearance: none;
+    background: #1e1e2f;
+    color: var(--color--cyan);
+    border: 2px solid var(--color--cyan);
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='cyan' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
     background-position: right 1rem center;
-    border-radius: 0.25rem;
-    padding: 0.75rem 3rem 0.75rem 1rem;
-    color: rgb(66, 70, 77);
+    background-size: 1rem;
+    padding-right: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+select:hover {
+    background: var(--color--background);
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 8px var(--color--cyan);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+/* 🎨 Variáveis */
+:root {
+    --color-bg: #0D0D0D;
+    --color-light: #f2f2f2;
+    --color-cyan: #00ffff;
+    --color-gold: #f4c542;
+    --color-red: #ff4c4c;
+    --color-dark-card: #111;
+    --color-overlay: rgba(15, 15, 15, 0.95);
+}
+
+/* 🔹 Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top, #0f2027, #0d0d0d);
+    color: var(--color-light);
+    font-family: "Lato", sans-serif;
+    line-height: 1.5;
+}
+
+/* 🟢 Navbar */
+#nav-bar {
+    background: var(--color-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+#nav-bar a {
+    color: var(--color-cyan);
+    text-decoration: none;
+    margin: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+}
+
+#nav-bar a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--color-cyan);
+    transition: width 0.3s ease-in-out;
+}
+
+#nav-bar a:hover::after {
+    width: 100%;
+}
+
+/* Responsividade Navbar */
+@media (max-width: 768px) {
+    #nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav-bar a {
+        margin: 8px 0;
+        display: block;
+    }
+}
+
+/* 🟢 GRID de Campeões */
+ul#listChampions {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 📱 Duas colunas em telas médias */
+@media (min-width: 600px) {
+    ul#listChampions {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
 }
